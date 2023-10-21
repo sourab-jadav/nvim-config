@@ -36,6 +36,9 @@ vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<leader>n", "<cmd>bn<CR>")
+vim.keymap.set("n", "<leader>p", "<cmd>bp<CR>")
+vim.keymap.set("n", "<leader>ls", "<cmd>Mru<CR>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
@@ -44,7 +47,7 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/the
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader>st", "<cmd>lcd %:p:h<CR>");
 -- Map Ctrl+` to change the working directory to the file's directory
-vim.api.nvim_set_keymap('n',"<leader>`", ':Ex|:lcd %:p:h|terminal<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n',"<leader>`", ':Ex|:lcd %:h|terminal<CR>', { noremap = true, silent = true })
 
 
 vim.keymap.set("n", "<leader><leader>", function()
