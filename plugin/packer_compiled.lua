@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/sourab/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/sourab/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
   harpoon = {
     loaded = true,
     path = "/home/sourab/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -103,6 +108,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sourab/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  mru = {
+    loaded = true,
+    path = "/home/sourab/.local/share/nvim/site/pack/packer/start/mru",
+    url = "https://github.com/yegappan/mru"
   },
   ["neo-runner.nvim"] = {
     loaded = true,
@@ -159,6 +169,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sourab/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-be-good"] = {
+    loaded = true,
+    path = "/home/sourab/.local/share/nvim/site/pack/packer/start/vim-be-good",
+    url = "https://github.com/ThePrimeagen/vim-be-good"
   },
   ["vim-fugitive"] = {
     loaded = true,
