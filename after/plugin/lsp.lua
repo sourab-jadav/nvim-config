@@ -1,6 +1,5 @@
 local lsp_zero = require('lsp-zero')
 local ls = require("luasnip")
-
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = { 'tsserver', 'rust_analyzer', 'eslint', 'lua_ls', 'clangd' },
@@ -21,6 +20,10 @@ local mapping = cmp.mapping.preset.insert({
     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
+    ["<CR>"] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    }
 })
 
 lsp_zero.on_attach(function(client, bufnr)
@@ -50,4 +53,6 @@ cmp.setup({
         { name = 'nvim_lua' },
     },
     formatting = lsp_zero.cmp_format(),
+    mapping=mapping
 })
+

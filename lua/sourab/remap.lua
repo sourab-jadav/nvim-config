@@ -20,8 +20,8 @@ vim.keymap.set("n", "<leader>svwm", function()
 end)
 
 -- greatest remap ever
---vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set("x", "<leader>p", [["+p]])
+vim.keymap.set("x", "<leader>p", [["_dP]])
+--vim.keymap.set("x", "<leader>p", [["+p]])
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
@@ -75,7 +75,7 @@ vim.api.nvim_set_keymap('t', '<C-w>', '<C-\\><C-N><cmd>term bash -c "disown %1"<
 
 
 
-
+--buffers
 function Close_other_buffers()
     local current_bufnr = vim.fn.bufnr('%')
     for _, bufnr in ipairs(vim.fn.getbufinfo({ bufloaded = 1 })) do
@@ -85,4 +85,8 @@ function Close_other_buffers()
     end
 end
 vim.api.nvim_set_keymap('n', '<Leader>bda', ':lua Close_other_buffers()<CR>', { noremap = true, silent = true })
+
+
+
+
 
