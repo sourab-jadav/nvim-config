@@ -10,3 +10,5 @@ vim.g.runner_python_options = ''
 vim.api.nvim_set_keymap('n', '<leader>rn', [[:lua if vim.bo.filetype == 'cpp' or vim.bo.filetype=='c' then vim.cmd(':NeoRunner') end<CR>]], { noremap = true, silent = true })
 
 
+
+

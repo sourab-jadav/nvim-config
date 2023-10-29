@@ -12,6 +12,14 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use { "ellisonleao/gruvbox.nvim" }
+    --comments in neovim
+    use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+}
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
@@ -51,4 +59,3 @@ return require('packer').startup(function(use)
     use('ThePrimeagen/vim-be-good')
     use('yegappan/mru')
 end)
-
