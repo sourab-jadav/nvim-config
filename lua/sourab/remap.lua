@@ -90,3 +90,5 @@ vim.api.nvim_set_keymap('n', '<Leader>bda', ':lua Close_other_buffers()<CR>', { 
 
 
 
+-- telescope
+vim.api.nvim_set_keymap('n', '<leader>of', [[:Telescope oldfiles<CR>]], { noremap = true, silent = true })

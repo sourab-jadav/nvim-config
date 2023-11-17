@@ -21,4 +21,6 @@ end
 
 vim.api.nvim_set_keymap('n', '<leader>mw', [[:lua MarkWindowSwap()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>pw', [[:lua DoWindowSwap()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F10>', [[:wincmd _<Bar>wincmd <Bar><CR>]], { noremap = true, silent = true })
+
 

@@ -14,3 +14,5 @@ require('telescope').setup{
     }
   }
 }
+vim.api.nvim_set_keymap('n', '<leader>of', [[:Telescope oldfiles<CR>]], { noremap = true, silent = true })
+
