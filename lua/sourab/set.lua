@@ -32,4 +32,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+-- Create a command to execute :sp | term
+vim.cmd("command! -nargs=0 Str execute 'sp | term'")
+vim.g.AutoPairsFlyMode = 1
 

@@ -1,2 +1,129 @@
 code folding in nvim
 
+
+autopairs mappings and settings
+
+[
+    ()=>({
+         (foo bar)
+         })
+]}
+
+[
+    ()=>({
+         (foo bar)
+         })
+]
+
+[
+    ()=>({
+         (foo bar)
+         })
+]
+
+'"``"'
+'''
+"""
+```
+
+```
+"""
+'''
+{
+
+}
+\'
+
+i'm
+alt+p to toggle enable and disable plugin
+(lkjskdf lkjslkjdflskjf)    //place the cursor in b/w and type ) to jum
+
+//fast trapping
+"lkjskdf lkjslkjdflskjf"  //type alt+e to get this
+
+//fly mode
+
+[
+    ()=>({
+         (foo bar)   //place the cursor after r and type ] it will jump to the closing square bracket
+                    //to ignore the jump and actually place ] then type alt+b
+         })
+]
+
+
+
+--vim sourround by tpope
+
+ysiw'
+ds'
+cs`
+"`ys`" -->ysiW"
+function(val)  -->ysiwf
+function(val){
+
+}
+
+val1,val2,val3      -->yssf
+
+--sentence.
+'thelkjl ljlskjdfsld lkjdlsdjfoisl lkljdf.' ljsdflskjfie lkjsf  -->ysas'
+
+
+
+(       --yS2w(
+    # variant
+)
+
+-ySS --own line
+-yS
+
+
+
+--visual selection
+## ( VISUAL     //select the area and type S(
+    - `S` )
+
+
+--visual line mode
+(
+ lkjslkdjf
+ lkjsld
+)
+
+
+--block visual mode
+( -lkjsd flj )
+(  )
+( slkdjf lkjlkjdsdf )
+set virtualedit=block  -->it will actually select a block
+
+**giw(  --surround with no space
+**giw)  --surround with opening space)
+
+
+`),},],>` 
+`b,B,r,a`  aliases
+`',",``  only searched  on line
+
+
+html tags
+`<firtt>t</firtt>`  --ysiwt
+<something>hello</something>                    --cstt or cst' or cs't
+<h2><h1>TAGS</h2> </h1>              --ysWt
+find one tag side and do --dst 
+
+    for c-style coding
+
+shift+s +ctrl+}
+
+csttp>  --removes the attributes
+cstt h1 font=some  
+
+ys2w<C-T>t  surrounding with indentation
+
+<h1>        //ysipt  
+lkjfsldkjf
+</h1>
+
+:nmap <C-p> F(hdiwlds)  removes the function
+

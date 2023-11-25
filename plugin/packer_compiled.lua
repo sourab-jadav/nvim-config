@@ -120,11 +120,6 @@ _G.packer_plugins = {
     path = "/home/sourab/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  mru = {
-    loaded = true,
-    path = "/home/sourab/.local/share/nvim/site/pack/packer/start/mru",
-    url = "https://github.com/yegappan/mru"
-  },
   ["neo-runner.nvim"] = {
     loaded = true,
     path = "/home/sourab/.local/share/nvim/site/pack/packer/start/neo-runner.nvim",
@@ -190,6 +185,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sourab/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/sourab/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   }
 }
 

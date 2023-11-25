@@ -92,3 +92,16 @@ vim.api.nvim_set_keymap('n', '<Leader>bda', ':lua Close_other_buffers()<CR>', { 
 
 -- telescope
 vim.api.nvim_set_keymap('n', '<leader>of', [[:Telescope oldfiles<CR>]], { noremap = true, silent = true })
+
+
+
+
+--window management
+-- Rotate to the previous window with Shift + L
+vim.api.nvim_set_keymap('n', '<S-R>', ':wincmd w<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-X>', ':wincmd x<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-L>', ':wincmd L<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F9>', ':wincmd =<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-Q>', ':wincmd q<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'ss', ':split<Return>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'sv', ':vsplit<Return>', { noremap = true, silent = true })

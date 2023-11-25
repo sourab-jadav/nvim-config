@@ -15,11 +15,11 @@ return require('packer').startup(function(use)
     use { "ellisonleao/gruvbox.nvim" }
     --comments in neovim
     use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end
-}
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
@@ -56,6 +56,9 @@ return require('packer').startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+    -- use('jiangmiao/auto-pairs')
+    use('tpope/vim-surround')
     use('ThePrimeagen/vim-be-good')
-    use('yegappan/mru')
+    -- use('yegappan/mru')
+    use('tibabit/vim-templates')
 end)
