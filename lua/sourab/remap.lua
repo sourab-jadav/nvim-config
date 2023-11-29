@@ -98,10 +98,21 @@ vim.api.nvim_set_keymap('n', '<leader>of', [[:Telescope oldfiles<CR>]], { norema
 
 --window management
 -- Rotate to the previous window with Shift + L
-vim.api.nvim_set_keymap('n', '<S-R>', ':wincmd w<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'r', ':wincmd w<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-X>', ':wincmd x<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<S-L>', ':wincmd L<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-S-L>', ':wincmd L<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-S-K>', ':wincmd K<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-S-J>', ':wincmd J<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-S-H>', ':wincmd H<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<F9>', ':wincmd =<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-Q>', ':wincmd q<CR>', { noremap = true, silent = true })
+
+-- splitting 
 vim.api.nvim_set_keymap('n', 'ss', ':split<Return>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sv', ':vsplit<Return>', { noremap = true, silent = true })
+
+-- window navigation
+vim.api.nvim_set_keymap('n', 'sh', ':wincmd h<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'sl', ':wincmd l<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'sj', ':wincmd j<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'sk', ':wincmd k<CR>', { noremap = true, silent = true })
