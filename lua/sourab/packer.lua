@@ -60,5 +60,7 @@ return require('packer').startup(function(use)
     use('tpope/vim-surround')
     use('ThePrimeagen/vim-be-good')
     -- use('yegappan/mru')
-    use('tibabit/vim-templates')
+    -- use('tibabit/vim-templates')
+    -- use { 'michaelb/sniprun', run = 'sh ./install.sh'}
+
 end)

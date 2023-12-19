@@ -1,4 +1,5 @@
 code folding in nvim
+za --toggles the fold
 
 
 autopairs mappings and settings
@@ -127,3 +128,28 @@ lkjfsldkjf
 
 :nmap <C-p> F(hdiwlds)  removes the function
 
+
+
+git command used so far
+I   --opens diff file in the terminal
+gp  --opens up the diff mode of the file
+o   --opens up the file
+C   --opens up the commit containing the current file
+A   
+-   
+]/  --collapsing the inline diff
+gu  --jumping to areas
+gs
+gp
+
+netrw
+removing files by ignoring the promt
+select the files and type a
+
+tabnew
+:tab split --open current buffer in a new tab
+:tab
+
+gx is a boon jump to the hyper link
+converting [[ ]] to {{}}
+0f[€ýavt;€ýa:s/\[/{/gf]€ýavt;€ýa:s/\]/}/g

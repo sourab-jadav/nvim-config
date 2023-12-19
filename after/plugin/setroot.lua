@@ -1,3 +1,4 @@
+-- this config set's the pwd of the buffer to the rootdirectory of the project
 -- Array of file names indicating root directory. Modify to your liking.
 local root_names = { '.git', 'Makefile' }
 

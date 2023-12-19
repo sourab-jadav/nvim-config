@@ -1,11 +1,10 @@
 vim.g.mapleader = " "
 -- Set the initial window width for Netrw in vertical split mode
 vim.g.netrw_winsize = 10
-vim.keymap.set("n", "<leader>e","<cmd>Ex<CR>")
+vim.keymap.set("n", "<leader>e",":Ex<CR>")
 vim.keymap.set("n", "<leader>q","<cmd>bd<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -26,12 +25,10 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
-
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
@@ -98,7 +95,7 @@ vim.api.nvim_set_keymap('n', '<leader>of', [[:Telescope oldfiles<CR>]], { norema
 
 --window management
 -- Rotate to the previous window with Shift + L
-vim.api.nvim_set_keymap('n', 'r', ':wincmd w<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 't', ':wincmd w<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-X>', ':wincmd x<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-S-L>', ':wincmd L<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-S-K>', ':wincmd K<CR>', { noremap = true, silent = true })
@@ -116,3 +113,12 @@ vim.api.nvim_set_keymap('n', 'sh', ':wincmd h<CR>', { noremap = true, silent = t
 vim.api.nvim_set_keymap('n', 'sl', ':wincmd l<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sj', ':wincmd j<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sk', ':wincmd k<CR>', { noremap = true, silent = true })
+
+--working with tabs
+vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Right> ',':tabnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Left>', ':tabprevious<CR>', { noremap = true, silent = true })
+
+-- Map jk to act as Escape in insert mode
+vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', 'kj', '<Esc>', { noremap = true, silent = true })
