@@ -153,3 +153,17 @@ tabnew
 gx is a boon jump to the hyper link
 converting [[ ]] to {{}}
 0f[€ýavt;€ýa:s/\[/{/gf]€ýavt;€ýa:s/\]/}/g
+
+undo tree
+wundo file.undo
+rundo file.undo
+J to go up the tree
+K to go down the tree
+
+
+:norm
+: ! <command> "works really well with visual mode"
+gf and gx to open fils and links
+
+encrypting files within vim
+:X --will ask you enter the encryption key

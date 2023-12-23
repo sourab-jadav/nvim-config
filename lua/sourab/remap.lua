@@ -19,12 +19,13 @@ vim.keymap.set("n", "<leader>svwm", function()
 end)
 
 -- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
+-- vim.keymap.set("x", "<leader>p", [["\"_dP"]])
 --vim.keymap.set("x", "<leader>p", [["+p]])
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+-- vim.keymap.set("n", "p", [["+p]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
@@ -64,11 +65,11 @@ end)
 --terminal
 -- Define a key mapping in Terminal mode
 --vim.api.nvim_set_keymap('t', '<C-q>', '<C-\\><C-n>:wincmd w<CR>', { noremap = true })
-vim.api.nvim_set_keymap('t', '<C-q>', '<C-\\><C-N>', { noremap = true }) --quiting from the terminal mode
+vim.api.nvim_set_keymap('t', '<C-c>', '<C-\\><C-N>', { noremap = true }) --quiting from the terminal mode
 
 
 
-vim.api.nvim_set_keymap('t', '<C-w>', '<C-\\><C-N><cmd>term bash -c "disown %1"<CR> ', { noremap = true })
+-- vim.api.nvim_set_keymap('t', '<C-w>', '<C-\\><C-N><cmd>term bash -c "disown %1"<CR> ', { noremap = true })
 
 
 
@@ -82,7 +83,8 @@ function Close_other_buffers()
     end
 end
 vim.api.nvim_set_keymap('n', '<Leader>bda', ':lua Close_other_buffers()<CR>', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap('n', 'B', ':bp<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'U', ':bn<CR>', { noremap = true, silent = true })
 
 
 
@@ -116,8 +118,8 @@ vim.api.nvim_set_keymap('n', 'sk', ':wincmd k<CR>', { noremap = true, silent = t
 
 --working with tabs
 vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-Right> ',':tabnext<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-Left>', ':tabprevious<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-l>',':tabnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-h>', ':tabprevious<CR>', { noremap = true, silent = true })
 
 -- Map jk to act as Escape in insert mode
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
