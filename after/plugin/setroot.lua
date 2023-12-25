@@ -1,6 +1,6 @@
 -- this config set's the pwd of the buffer to the rootdirectory of the project
 -- Array of file names indicating root directory. Modify to your liking.
-local root_names = { '.git','package.json', 'Makefile' }
+local root_names = { '.git', 'Makefile' }
 
 -- Cache to use for speed up (at cost of possibly outdated results)
 local root_cache = {}

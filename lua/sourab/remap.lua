@@ -35,8 +35,8 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>n", "<cmd>bn<CR>")
@@ -65,7 +65,7 @@ end)
 --terminal
 -- Define a key mapping in Terminal mode
 --vim.api.nvim_set_keymap('t', '<C-q>', '<C-\\><C-n>:wincmd w<CR>', { noremap = true })
-vim.api.nvim_set_keymap('t', '<C-c>', '<C-\\><C-N>', { noremap = true }) --quiting from the terminal mode
+vim.api.nvim_set_keymap('t', '<C-q>', '<C-\\><C-N>', { noremap = true }) --quiting from the terminal mode
 
 
 
@@ -82,17 +82,13 @@ function Close_other_buffers()
         end
     end
 end
+
 vim.api.nvim_set_keymap('n', '<Leader>bda', ':lua Close_other_buffers()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'B', ':bp<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'U', ':bn<CR>', { noremap = true, silent = true })
 
-
-
-
 -- telescope
 vim.api.nvim_set_keymap('n', '<leader>of', [[:Telescope oldfiles<CR>]], { noremap = true, silent = true })
-
-
 
 
 --window management
@@ -118,7 +114,7 @@ vim.api.nvim_set_keymap('n', 'sk', ':wincmd k<CR>', { noremap = true, silent = t
 
 --working with tabs
 vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-l>',':tabnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>',':tabnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-h>', ':tabprevious<CR>', { noremap = true, silent = true })
 
 -- Map jk to act as Escape in insert mode
