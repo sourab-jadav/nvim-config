@@ -52,8 +52,17 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader>st", "<cmd>lcd %:p:h<CR>");
+
 -- Map Ctrl+` to change the working directory to the file's directory
-vim.api.nvim_set_keymap('n', "<leader>`", ':vsplit | :Ex|:lcd %:p:h|terminal<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', "<leader>`", ':vsplit | :Ex|:lcd %:p:h|terminal<CR>', { noremap = true, silent = true })
+-- Function to open a terminal in a vertical split and start insert mode
+function openTerm()
+    vim.api.nvim_command('vsplit | :Ex | :lcd %:p:h | terminal')
+    vim.cmd('startinsert')
+end
+
+-- Map a key to call the function, for example, <leader>`
+vim.api.nvim_set_keymap('n', '<leader>`', [[:lua openTerm()<CR>]], { noremap = true, silent = true })
 
 
 vim.keymap.set("n", "<leader><leader>", function()
