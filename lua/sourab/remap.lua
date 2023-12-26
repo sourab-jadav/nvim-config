@@ -1,6 +1,4 @@
 vim.g.mapleader = " "
--- Set the initial window width for Netrw in vertical split mode
-vim.g.netrw_winsize = 10
 vim.keymap.set("n", "<leader>e",":Ex<CR>")
 vim.keymap.set("n", "<leader>q","<cmd>bd<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -19,43 +17,30 @@ vim.keymap.set("n", "<leader>svwm", function()
 end)
 
 -- greatest remap ever
--- vim.keymap.set("x", "<leader>p", [["\"_dP"]])
---vim.keymap.set("x", "<leader>p", [["+p]])
+vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
--- vim.keymap.set("n", "p", [["+p]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-
-
-
--- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
--- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-vim.keymap.set("n", "<leader>n", "<cmd>bn<CR>")
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
-vim.keymap.set("n", "<leader>p", "<cmd>bp<CR>")
+vim.keymap.set("n", "U", "<cmd>bn<CR>")
+vim.keymap.set("n", "B", "<cmd>bp<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
-vim.keymap.set("n", "<leader>ls", "<cmd>Mru<CR>")
-
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader>st", "<cmd>lcd %:p:h<CR>");
 
--- Map Ctrl+` to change the working directory to the file's directory
--- vim.api.nvim_set_keymap('n', "<leader>`", ':vsplit | :Ex|:lcd %:p:h|terminal<CR>', { noremap = true, silent = true })
--- Function to open a terminal in a vertical split and start insert mode
 function openTerm()
     vim.api.nvim_command('vsplit | :Ex | :lcd %:p:h | terminal')
     vim.cmd('startinsert')
@@ -71,14 +56,7 @@ end)
 
 
 
---terminal
--- Define a key mapping in Terminal mode
---vim.api.nvim_set_keymap('t', '<C-q>', '<C-\\><C-n>:wincmd w<CR>', { noremap = true })
 vim.api.nvim_set_keymap('t', '<C-q>', '<C-\\><C-N>', { noremap = true }) --quiting from the terminal mode
-
-
-
--- vim.api.nvim_set_keymap('t', '<C-w>', '<C-\\><C-N><cmd>term bash -c "disown %1"<CR> ', { noremap = true })
 
 
 
@@ -93,13 +71,6 @@ function Close_other_buffers()
 end
 
 vim.api.nvim_set_keymap('n', '<Leader>bda', ':lua Close_other_buffers()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'B', ':bp<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'U', ':bn<CR>', { noremap = true, silent = true })
-
--- telescope
-vim.api.nvim_set_keymap('n', '<leader>of', [[:Telescope oldfiles<CR>]], { noremap = true, silent = true })
-
-
 --window management
 -- Rotate to the previous window with Shift + L
 vim.api.nvim_set_keymap('n', 't', ':wincmd w<CR>', { noremap = true, silent = true })
@@ -123,9 +94,6 @@ vim.api.nvim_set_keymap('n', 'sk', ':wincmd k<CR>', { noremap = true, silent = t
 
 --working with tabs
 vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-j>',':tabnext<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-h>', ':tabprevious<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-h>',':tabnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-v>', ':tabprevious<CR>', { noremap = true, silent = true })
 
--- Map jk to act as Escape in insert mode
-vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', 'kj', '<Esc>', { noremap = true, silent = true })

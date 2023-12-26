@@ -15,11 +15,10 @@ function toggle_mapping()
         vim.api.nvim_set_keymap('i', 'kj', '<Esc>', { noremap = true, silent = true })
         print("Mapping enabled")
     end
-
     -- Update the state
     mapping_enabled = not mapping_enabled
 end
 
--- Example: Map <Leader>t to toggle the mapping
-vim.api.nvim_set_keymap('n', '<Leader>s', '<Cmd>lua toggle_mapping()<CR>', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap('n', '<Leader>tk', '<Cmd>lua toggle_mapping()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', 'kj', '<Esc>', { noremap = true, silent = true })
