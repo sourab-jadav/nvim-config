@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or "rose-pine"
+    color = color or "gruvbox"
     vim.cmd.colorscheme(color)
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -14,6 +14,7 @@ function ToggleColorscheme()
     if current_colorscheme == 'rose-pine' then
         vim.cmd('colorscheme gruvbox')
         current_colorscheme = 'gruvbox'
+        -- ColorMyPencils()
     else
         ColorMyPencils()
         current_colorscheme = 'rose-pine'
