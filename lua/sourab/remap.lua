@@ -1,20 +1,21 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>e",":Ex<CR>")
-vim.keymap.set("n", "<leader>q","<cmd>bd<CR>")
+vim.keymap.set("n", "<leader>e", ":Ex<CR>")
+vim.keymap.set("n", "<leader>q", "<cmd>bd<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-a>", "ggVG")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>vwm", function()
-    require("vim-with-me").StartVimWithMe()
-end)
-vim.keymap.set("n", "<leader>svwm", function()
-    require("vim-with-me").StopVimWithMe()
-end)
+-- vim.keymap.set("n", "<leader>vwm", function()
+--     require("vim-with-me").StartVimWithMe()
+-- end)
+-- vim.keymap.set("n", "<leader>svwm", function()
+--     require("vim-with-me").StopVimWithMe()
+-- end)
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -35,11 +36,11 @@ vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
 vim.keymap.set("n", "U", "<cmd>bn<CR>")
 vim.keymap.set("n", "B", "<cmd>bp<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
-vim.keymap.set("n", "<leader>st", "<cmd>lcd %:p:h<CR>");
+-- vim.keymap.set("n", "<leader>st", "<cmd>lcd %:p:h<CR>");
+vim.keymap.set("n", "<leader>.", "<cmd>MRUToggle<CR>")
 
 function openTerm()
     vim.api.nvim_command('vsplit | :Ex | :lcd %:p:h | terminal')
@@ -82,7 +83,7 @@ vim.api.nvim_set_keymap('n', '<A-S-H>', ':wincmd H<CR>', { noremap = true, silen
 vim.api.nvim_set_keymap('n', '<F9>', ':wincmd =<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-Q>', ':wincmd q<CR>', { noremap = true, silent = true })
 
--- splitting 
+-- splitting
 vim.api.nvim_set_keymap('n', 'ss', ':split<Return>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sv', ':vsplit<Return>', { noremap = true, silent = true })
 
@@ -94,6 +95,18 @@ vim.api.nvim_set_keymap('n', 'sk', ':wincmd k<CR>', { noremap = true, silent = t
 
 --working with tabs
 vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-h>',':tabnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-h>', ':tabnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-v>', ':tabprevious<CR>', { noremap = true, silent = true })
 
+
+
+
+
+function _G.toggleMapping()
+    vim.cmd(':%s/\\[/{/g')
+    vim.cmd(':%s/\\]/}/g')
+end
+
+vim.cmd [[
+ command! Curly lua toggleMapping()
+]]

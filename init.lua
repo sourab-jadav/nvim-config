@@ -10,4 +10,4 @@ vim.api.nvim_exec([[
   autocmd BufWinEnter *.cpp silent! loadview
 ]], false)
 
-vim.api.nvim_exec([[:highlight Folded guibg=grey guifg=blue]], false)
+vim.api.nvim_exec([[:highlight Folded guibg=grey guifg=blue]], true)

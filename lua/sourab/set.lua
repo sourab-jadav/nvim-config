@@ -1,5 +1,5 @@
 vim.opt.guicursor = ""
-
+vim.opt.ignorecase=true
 vim.opt.nu = true
 
 vim.opt.relativenumber = true

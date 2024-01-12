@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use('NTBBloodbath/doom-one.nvim')
     use { "ellisonleao/gruvbox.nvim" }
     --comments in neovim
     use {
@@ -59,8 +60,11 @@ return require('packer').startup(function(use)
     -- use('jiangmiao/auto-pairs')
     use('tpope/vim-surround')
     use('ThePrimeagen/vim-be-good')
-    -- use('yegappan/mru')
+    -- use {
+    --     'ilAYAli/scMRU.nvim',
+    --     dependencies = 'kkharji/sqlite.lua',
+    -- }
+    use('yegappan/mru')
     -- use('tibabit/vim-templates')
     -- use { 'michaelb/sniprun', run = 'sh ./install.sh'}
-
 end)
