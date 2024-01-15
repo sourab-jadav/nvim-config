@@ -99,12 +99,15 @@ vim.api.nvim_set_keymap('n', '<C-h>', ':tabnext<CR>', { noremap = true, silent =
 vim.api.nvim_set_keymap('n', '<C-v>', ':tabprevious<CR>', { noremap = true, silent = true })
 
 
+vim.api.nvim_set_keymap('v', 'y', 'ygv<Esc>', {noremap = true})
 
 
 
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 function _G.toggleMapping()
-    vim.cmd(':%s/\\[/{/g')
-    vim.cmd(':%s/\\]/}/g')
+    vim.cmd(':s/\\[/{/g')
+    vim.cmd(':s/\\]/}/g')
+    vim.cmd(':s/\"/\'/g')
 end
 
 vim.cmd [[
