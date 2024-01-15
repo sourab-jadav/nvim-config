@@ -100,6 +100,13 @@ vim.api.nvim_set_keymap('n', '<C-v>', ':tabprevious<CR>', { noremap = true, sile
 
 
 vim.api.nvim_set_keymap('v', 'y', 'ygv<Esc>', {noremap = true})
+<<<<<<< HEAD
+=======
+vim.api.nvim_set_keymap('n', 'p', 'gp', {noremap = true})
+vim.api.nvim_set_keymap('n', 'P', 'gP', {noremap = true})
+vim.api.nvim_set_keymap('n', 'gp', 'p', {noremap = true})
+vim.api.nvim_set_keymap('n', 'gP', 'P', {noremap = true})
+>>>>>>> 89a7e0b (yanking pasting made easy)
 
 
 

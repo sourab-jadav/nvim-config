@@ -164,6 +164,8 @@ K to go down the tree
 :norm
 : ! <command> "works really well with visual mode"
 gf and gx to open fils and links
+gi --it is useful let's say you edited something and you go through the doc
+    now you want to go back to the place where you were in insert mode you use gi
 
 encrypting files within vim
 :X --will ask you enter the encryption key
