@@ -105,13 +105,10 @@ vim.api.nvim_set_keymap('n', '<C-s>', ':tabprevious<CR>', { noremap = true, sile
 vim.api.nvim_set_keymap('v', '<Space>', 'zf', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('v', 'y', 'ygv<Esc>', {noremap = true})
-<<<<<<< HEAD
-=======
 vim.api.nvim_set_keymap('n', 'p', 'gp', {noremap = true})
 vim.api.nvim_set_keymap('n', 'P', 'gP', {noremap = true})
 vim.api.nvim_set_keymap('n', 'gp', 'p', {noremap = true})
 vim.api.nvim_set_keymap('n', 'gP', 'P', {noremap = true})
->>>>>>> 89a7e0b (yanking pasting made easy)
 
 
 
@@ -129,4 +126,3 @@ vim.cmd [[
 vim.cmd [[
   command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
 ]]
-
