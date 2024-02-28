@@ -35,18 +35,24 @@ return require('packer').startup(function(use)
         branch = 'v3.x',
         requires = {
             --- Uncomment these if you want to manage LSP servers from neovim
-            -- {'williamboman/mason.nvim'},
-            -- {'williamboman/mason-lspconfig.nvim'},
-
             -- LSP Support
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
             { 'neovim/nvim-lspconfig' },
+
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
             { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
+
+            -- Snippets
             { 'L3MON4D3/LuaSnip' },
-            { 'saadparwaiz1/cmp_luasnip' }
-        }
+            { 'rafamadriz/friendly-snippets' }, }
     }
+    use("folke/zen-mode.nvim")
     use {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",

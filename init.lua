@@ -11,3 +11,4 @@ vim.api.nvim_exec([[
 ]], false)
 
 vim.api.nvim_exec([[:highlight Folded guibg=grey guifg=blue]], true)
+

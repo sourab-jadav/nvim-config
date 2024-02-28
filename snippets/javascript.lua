@@ -9,6 +9,11 @@ ls.add_snippets('javascript',{
         t"console.log(`",i(1),t"`)",i(2)
     })
 })
+ls.add_snippets('javascript',{
+    s("ll",{
+        t"console.log(",i(1),t")",i(2)
+    })
+})
 ls.add_snippets('javascriptreact',{
     s("lg",{
         t"console.log(`",i(1),t"`)",i(2)

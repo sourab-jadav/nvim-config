@@ -1,4 +1,3 @@
-
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>th', builtin.find_files, {})
 -- vim.keymap.set('n', '<C-p>', builtin.git_files, {})
@@ -10,7 +9,15 @@ require('telescope').setup{
   defaults = {
     file_ignore_patterns = {
       "node_modules",
-    }
+    },
+     mappings = {
+      i = {
+        -- ["<C-y>"] = actions.api.insVdert_selected,
+        -- ["<C-j>"] = actions.move_selection_next,
+        -- ["<C-k>"] = actions.move_selection_previous,
+      },
+
+    },
   },
 }
 vim.api.nvim_set_keymap('n', '<leader>tb', [[:Telescope buffers<CR>]], { noremap = true, silent = true })
