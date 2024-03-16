@@ -18,7 +18,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- end)
 
 -- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<leader>p", [["_dP]]) -- it is going to delete the text and paste it in the next line
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
@@ -40,16 +40,16 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
--- vim.keymap.set("n", "<leader>st", "<cmd>lcd %:p:h<CR>");
+vim.keymap.set("n", "<leader>i", "<cmd>lcd %:p:h<CR>");
 vim.keymap.set("n", "<leader>.", "<cmd>MRUToggle<CR>")
 
-function openTerm()
+function OpenTerm()
     vim.api.nvim_command('vsplit | :Ex | :lcd %:p:h | terminal')
     vim.cmd('startinsert')
 end
 
 -- Map a key to call the function, for example, <leader>`
-vim.api.nvim_set_keymap('n', '<leader>`', [[:lua openTerm()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>`', [[:lua OpenTerm()<CR>]], { noremap = true, silent = true })
 
 
 -- vim.keymap.set("n", "<leader><leader>", function()
@@ -109,7 +109,10 @@ vim.api.nvim_set_keymap('n', 'p', 'gp', {noremap = true})
 vim.api.nvim_set_keymap('n', 'P', 'gP', {noremap = true})
 vim.api.nvim_set_keymap('n', 'gp', 'p', {noremap = true})
 vim.api.nvim_set_keymap('n', 'gP', 'P', {noremap = true})
-
+vim.api.nvim_exec([[
+  nnoremap <leader>z "+p
+  nnoremap <leader>z "+P
+]], true)
 
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- substibute word under cursor

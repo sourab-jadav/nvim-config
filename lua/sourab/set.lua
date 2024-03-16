@@ -18,6 +18,9 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.cursorline=false
+-- Disable automatic commenting, wrapping, and insertion of comment leader
+-- vim.opt.formatoptions:remove({"c", "r", "o"})
+-- Apply the formatoptions setting to all file types
 
 
 vim.opt.hlsearch = false
