@@ -191,6 +191,11 @@ _G.packer_plugins = {
     path = "/home/sourab/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  pynvim = {
+    loaded = true,
+    path = "/home/sourab/.local/share/nvim/site/pack/packer/start/pynvim",
+    url = "https://github.com/neovim/pynvim"
+  },
   ["rose-pine"] = {
     loaded = true,
     path = "/home/sourab/.local/share/nvim/site/pack/packer/start/rose-pine",

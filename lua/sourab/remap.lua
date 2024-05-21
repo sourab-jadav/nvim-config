@@ -113,6 +113,21 @@ vim.api.nvim_exec([[
   nnoremap <leader>z "+p
   nnoremap <leader>z "+P
 ]], true)
+-- cpp file compile and run
+vim.cmd([[nnoremap <silent> <leader>r :!g++ -Wall % && ./a.out<cr>]])
+
+-- Define a function to split the current window and open a terminal running Java
+
+
+-- Map <leader>r to the runJava function
+vim.api.nvim_set_keymap('n', '<leader>rj', ':lua runJava()<CR>', {noremap = true})
+ function _G.runJava()
+    -- vim.cmd('split') -- Open a vertical split
+    vim.cmd('split | term java %') -- Run Java in the new split
+end
+
+
+-- vim.cmd([[ nnoremap <leader>r :split | term java %<CR> ]])
 
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- substibute word under cursor

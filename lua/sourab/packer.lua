@@ -12,6 +12,11 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use {
+        'neovim/pynvim',
+        run = ':UpdateRemotePlugins'
+    }
+
     use('NTBBloodbath/doom-one.nvim')
     use { "ellisonleao/gruvbox.nvim" }
     --comments in neovim
@@ -58,7 +63,7 @@ return require('packer').startup(function(use)
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     }
-    use('BenGH28/neo-runner.nvim')
+    -- use{'BenGH28/neo-runner.nvim'}
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
