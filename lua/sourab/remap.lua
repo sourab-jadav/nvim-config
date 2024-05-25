@@ -104,11 +104,11 @@ vim.api.nvim_set_keymap('n', '<C-h>', ':tabnext<CR>', { noremap = true, silent =
 vim.api.nvim_set_keymap('n', '<C-s>', ':tabprevious<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<Space>', 'zf', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('v', 'y', 'ygv<Esc>', {noremap = true})
-vim.api.nvim_set_keymap('n', 'p', 'gp', {noremap = true})
-vim.api.nvim_set_keymap('n', 'P', 'gP', {noremap = true})
-vim.api.nvim_set_keymap('n', 'gp', 'p', {noremap = true})
-vim.api.nvim_set_keymap('n', 'gP', 'P', {noremap = true})
+vim.api.nvim_set_keymap('v', 'y', 'ygv<Esc>', { noremap = true })
+vim.api.nvim_set_keymap('n', 'p', 'gp', { noremap = true })
+vim.api.nvim_set_keymap('n', 'P', 'gP', { noremap = true })
+vim.api.nvim_set_keymap('n', 'gp', 'p', { noremap = true })
+vim.api.nvim_set_keymap('n', 'gP', 'P', { noremap = true })
 vim.api.nvim_exec([[
   nnoremap <leader>z "+p
   nnoremap <leader>z "+P
@@ -118,21 +118,29 @@ vim.api.nvim_exec([[
 function _G.runcpp()
     vim.cmd('split | term g++ % && ./a.out')
 end
-vim.api.nvim_create_augroup('cpp_autocmd', { clear = true })
+
+vim.api.nvim_create_augroup('runner', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
-  group = 'cpp_autocmd',
-  pattern = 'cpp',
-  callback = function()
-    vim.api.nvim_buf_set_keymap(0, 'n', '<leader>rc', ':lua _G.runcpp()<CR>', { noremap = true, silent = true })
-  end
+    group = 'runner',
+    pattern = 'cpp',
+    callback = function()
+        vim.api.nvim_buf_set_keymap(0, 'n', '<leader>rc', ':lua _G.runcpp()<CR>', { noremap = true, silent = true })
+    end
 })
 
 -- Define a function to split the current window and open a terminal running Java
 
 
 -- Map <leader>r to the runJava function
-vim.api.nvim_set_keymap('n', '<leader>rj', ':lua runJava()<CR>', {noremap = true})
- function _G.runJava()
+
+vim.api.nvim_create_autocmd('FileType', {
+    group = 'runner',
+    pattern = 'java',
+    callback = function()
+        vim.api.nvim_set_keymap('n', '<leader>rj', ':lua runJava()<CR>', { noremap = true })
+    end
+})
+function _G.runJava()
     -- vim.cmd('split') -- Open a vertical split
     vim.cmd('split | term java %') -- Run Java in the new split
 end
