@@ -114,7 +114,18 @@ vim.api.nvim_exec([[
   nnoremap <leader>z "+P
 ]], true)
 -- cpp file compile and run
-vim.cmd([[nnoremap <silent> <leader>r :!g++ -Wall % && ./a.out<cr>]])
+-- vim.api.nvim_set_keymap('n', '<leader>rc', ':lua runcpp()<CR>', {noremap = true})
+function _G.runcpp()
+    vim.cmd('split | term g++ % && ./a.out')
+end
+vim.api.nvim_create_augroup('cpp_autocmd', { clear = true })
+vim.api.nvim_create_autocmd('FileType', {
+  group = 'cpp_autocmd',
+  pattern = 'cpp',
+  callback = function()
+    vim.api.nvim_buf_set_keymap(0, 'n', '<leader>rc', ':lua _G.runcpp()<CR>', { noremap = true, silent = true })
+  end
+})
 
 -- Define a function to split the current window and open a terminal running Java
 
