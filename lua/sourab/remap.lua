@@ -6,7 +6,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "<C-a>", "ggVG")
+-- vim.keymap.set("n", "<C-a>", "ggVG")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
@@ -38,7 +38,7 @@ vim.keymap.set("n", "B", "<cmd>bp<CR>")
 vim.keymap.set("n", "<leader>c", "<cmd>b#<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/sourab/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader>i", "<cmd>lcd %:p:h<CR>");
 vim.keymap.set("n", "<leader>.", "<cmd>MRUToggle<CR>")
@@ -119,19 +119,18 @@ function _G.runcpp()
     vim.cmd('split | term g++ % && ./a.out')
 end
 
+function _G.runJava()
+    -- vim.cmd('split') -- Open a vertical split
+    vim.cmd('split | term java %') -- Run Java in the new split
+end
 vim.api.nvim_create_augroup('runner', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
     group = 'runner',
-    pattern = 'cpp',
+    pattern = 'cpp,c',
     callback = function()
         vim.api.nvim_buf_set_keymap(0, 'n', '<leader>rc', ':lua _G.runcpp()<CR>', { noremap = true, silent = true })
     end
 })
-
--- Define a function to split the current window and open a terminal running Java
-
-
--- Map <leader>r to the runJava function
 
 vim.api.nvim_create_autocmd('FileType', {
     group = 'runner',
@@ -140,10 +139,11 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.api.nvim_set_keymap('n', '<leader>rj', ':lua runJava()<CR>', { noremap = true })
     end
 })
-function _G.runJava()
-    -- vim.cmd('split') -- Open a vertical split
-    vim.cmd('split | term java %') -- Run Java in the new split
-end
+-- Define a function to split the current window and open a terminal running Java
+
+
+-- Map <leader>r to the runJava function
+
 
 
 -- vim.cmd([[ nnoremap <leader>r :split | term java %<CR> ]])

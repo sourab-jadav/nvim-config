@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' }, }
     }
-    use("folke/zen-mode.nvim")
+    -- use("folke/zen-mode.nvim")
     use {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -78,4 +78,5 @@ return require('packer').startup(function(use)
     use('yegappan/mru')
     -- use('tibabit/vim-templates')
     -- use { 'michaelb/sniprun', run = 'sh ./install.sh'}
+    use('lervag/vimtex')
 end)
