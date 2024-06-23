@@ -9,3 +9,5 @@ ls.add_snippets('cpp',{
         t"std::cout<<",i(1),t"<<std::endl;"
     })
 })
+
+-- g/cout/s/^/\/\/ -- prepend with // to every line containing "cout"
