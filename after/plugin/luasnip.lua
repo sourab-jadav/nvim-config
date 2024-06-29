@@ -17,7 +17,12 @@ ls.config.set_config({
 
 
 
-vim.keymap.set({ "i" }, "<C-k>", function() ls.expand() end, { silent = true })
+vim.keymap.set({ "i","s" }, "<C-k>", function() ls.expand() end, { silent = true })
+-- vim.keymap.set({"i","s"},"<C-k>",function () -- this is not working
+--     if ls.expand_or_jumpable() then
+--         ls.expand_or_jumpable()
+--     end
+-- end,{ silent = true})
 vim.keymap.set({ "i", "s" }, "<C-l>", function() ls.jump(1) end, { silent = true })
 vim.keymap.set({ "i", "s" }, "<C-j>", function() ls.jump(-1) end, { silent = true })
 vim.keymap.set({ "i", "s" }, "<C-b>", function()

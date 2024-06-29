@@ -18,4 +18,16 @@ local snippets,autosnippets={},{}
 local group=vim.api.nvim_create_augroup("Lua snippets",{clear=true})
 local file_patterns="*.lua"
 
+ls.add_snippets("lua", {
+  s("if", {
+    t("if "), i(1, "condition"), t(" then"), t({"", "\t"}),
+    i(2),
+    t({"", "else"}), t({"", "\t"}),
+    i(3),
+    t({"", "end"})
+  })
+})
 
+ls.add_snippets("lua",{ -- this is cool
+    s("req",fmt("local {} = require('{}')",{i(1,"default"),rep(1)}))
+})
