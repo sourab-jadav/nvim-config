@@ -3,5 +3,3 @@ require('sourab.packer');
 require('sourab.set');
 require('sourab.snippets');
 --vim.cmd('colorscheme desert')
-
--- autoloading views
