@@ -22,3 +22,5 @@ require('telescope').setup{
 }
 vim.api.nvim_set_keymap('n', '<leader>tb', [[:Telescope buffers<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>of', [[:Telescope oldfiles<CR>]], { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>ost', "<cmd>lua require('telescope.builtin').oldfiles({ cwd_only = true })<cr>", { noremap = true, silent = true })

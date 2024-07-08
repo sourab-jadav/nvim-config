@@ -36,7 +36,7 @@ vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
 vim.keymap.set("n", "U", "<cmd>bn<CR>")
 vim.keymap.set("n", "B", "<cmd>bp<CR>")
 vim.keymap.set("n", "<leader>c", "<cmd>b#<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/sourab/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
