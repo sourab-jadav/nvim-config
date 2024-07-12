@@ -110,8 +110,7 @@ vim.api.nvim_set_keymap('n', 'P', 'gP', { noremap = true })
 vim.api.nvim_set_keymap('n', 'gp', 'p', { noremap = true })
 vim.api.nvim_set_keymap('n', 'gP', 'P', { noremap = true })
 vim.api.nvim_exec([[
-  nnoremap <leader>z "+p
-  nnoremap <leader>z "+P
+  vnoremap <leader>z "+p -- it will paste below the line +P will paste above the line
 ]], true)
 -- cpp file compile and run
 -- vim.api.nvim_set_keymap('n', '<leader>rc', ':lua runcpp()<CR>', {noremap = true})
