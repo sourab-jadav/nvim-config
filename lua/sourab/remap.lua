@@ -102,7 +102,7 @@ vim.api.nvim_set_keymap('n', 'sk', ':wincmd k<CR>', { noremap = true, silent = t
 vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-h>', ':tabnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-s>', ':tabprevious<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<Space>', 'zf', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('v', '<Space>', 'zf', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('v', 'y', 'ygv<Esc>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'p', 'gp', { noremap = true })
@@ -110,8 +110,9 @@ vim.api.nvim_set_keymap('n', 'P', 'gP', { noremap = true })
 vim.api.nvim_set_keymap('n', 'gp', 'p', { noremap = true })
 vim.api.nvim_set_keymap('n', 'gP', 'P', { noremap = true })
 vim.api.nvim_exec([[
-  vnoremap <leader>z "+p -- it will paste below the line +P will paste above the line
-]], true)
+  vnoremap <leader>z "+p
+  noremap <leader>z "+p
+]], true) -- p pastes below the line and P pastes above the line
 -- cpp file compile and run
 -- vim.api.nvim_set_keymap('n', '<leader>rc', ':lua runcpp()<CR>', {noremap = true})
 function _G.runcpp()
