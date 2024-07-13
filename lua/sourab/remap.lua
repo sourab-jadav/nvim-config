@@ -85,6 +85,9 @@ vim.api.nvim_set_keymap('n', '<A-S-L>', ':wincmd L<CR>', { noremap = true, silen
 vim.api.nvim_set_keymap('n', '<A-S-K>', ':wincmd K<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-S-J>', ':wincmd J<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-S-H>', ':wincmd H<CR>', { noremap = true, silent = true })
+-- Resize window with Alt-< and Alt->
+vim.api.nvim_set_keymap('n', '<A-<>', ':vertical resize -5<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A->>', ':vertical resize +5<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<F9>', ':wincmd =<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-Q>', ':wincmd q<CR>', { noremap = true, silent = true })
 
