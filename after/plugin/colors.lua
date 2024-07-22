@@ -3,8 +3,6 @@ function ColorMyPencils(color)
     vim.cmd.colorscheme(color)
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    vim.cmd('highlight Comment ctermfg=green')
-    vim.cmd('highlight Comment guifg=#00FF00')
 end
 
 -- Define the two color schemes
@@ -16,7 +14,7 @@ function ToggleColorscheme()
     if current_colorscheme == 'rose-pine' then
         vim.cmd('colorscheme gruvbox')
         current_colorscheme = 'gruvbox'
-        ColorMyPencils()
+        -- ColorMyPencils()
     else
         ColorMyPencils()
         current_colorscheme = 'rose-pine'
