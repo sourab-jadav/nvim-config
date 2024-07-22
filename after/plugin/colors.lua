@@ -16,7 +16,7 @@ function ToggleColorscheme()
     if current_colorscheme == 'rose-pine' then
         vim.cmd('colorscheme gruvbox')
         current_colorscheme = 'gruvbox'
-        -- ColorMyPencils()
+        ColorMyPencils()
     else
         ColorMyPencils()
         current_colorscheme = 'rose-pine'

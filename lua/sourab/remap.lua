@@ -126,6 +126,7 @@ function _G.runJava()
     -- vim.cmd('split') -- Open a vertical split
     vim.cmd('split | term java %') -- Run Java in the new split
 end
+
 vim.api.nvim_create_augroup('runner', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
     group = 'runner',
