@@ -132,7 +132,7 @@ vim.api.nvim_create_autocmd('FileType', {
     group = 'runner',
     pattern = 'cpp,c',
     callback = function()
-        vim.api.nvim_buf_set_keymap(0, 'n', '<leader>rc', ':lua _G.runcpp()<CR>', { noremap = true, silent = true })
+        vim.api.nvim_buf_set_keymap(0, 'n', '<leader>n', ':lua _G.runcpp()<CR>', { noremap = true, silent = true })
     end
 })
 

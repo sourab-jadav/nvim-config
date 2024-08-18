@@ -29,3 +29,7 @@ vim.cmd("command! -nargs=0 Str execute 'sp | term'")
 vim.g.AutoPairsFlyMode = 1
 -- copilot
 vim.g.copilot_enabled = 0 -- cpp lsp is not working properly when the copilot is turned on 
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"
+vim.opt.foldlevel = 99
+vim.opt.foldenable = true
