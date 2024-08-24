@@ -102,9 +102,9 @@ vim.api.nvim_set_keymap('n', 'sj', ':wincmd j<CR>', { noremap = true, silent = t
 vim.api.nvim_set_keymap('n', 'sk', ':wincmd k<CR>', { noremap = true, silent = true })
 
 --working with tabs
-vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-h>', ':tabnext<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-s>', ':tabprevious<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-t>', ':tabnew<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-l>', ':tabnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-s>', ':tabprevious<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('v', '<Space>', 'zf', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('v', 'y', 'ygv<Esc>', { noremap = true })
