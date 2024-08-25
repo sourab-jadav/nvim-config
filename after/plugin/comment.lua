@@ -1,3 +1,4 @@
+-- you can use gBu to uncomment the comment block you are in without selecting
 require('Comment').setup{
      ---Add a space b/w comment and the line
     padding = true,
