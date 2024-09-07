@@ -119,7 +119,7 @@ vim.api.nvim_exec([[
 -- cpp file compile and run
 -- vim.api.nvim_set_keymap('n', '<leader>rc', ':lua runcpp()<CR>', {noremap = true})
 function _G.runcpp()
-    vim.cmd('split | term g++ % && ./a.out')
+    vim.cmd('split | resize 10 | term g++ % && ./a.out')
 end
 
 function _G.runJava()
